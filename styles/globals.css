@@ -18,10 +18,12 @@
   body {
     @apply w-full;
     @apply mx-auto;
+    @apply bg-grape;
+    
     @apply bg-gradient-to-tr;
     @apply from-dark-grape;
     @apply to-grape;
-    @apply heropattern-jigsaw-red-100;
+   
     
   }
 }
