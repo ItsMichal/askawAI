@@ -32,9 +32,9 @@ export default async function requestQuestions(
         res.send({error:"invalid query"});
     }else{
         const response = await openai.createCompletion("text-curie-001", {
-            prompt: "Write 5 questions on " + topic,
+            prompt: "Write 8 questions on " + topic,
             temperature: 0.4,
-            max_tokens: 80,
+            max_tokens: 200,
             top_p: 1.0,
             frequency_penalty: 0.4,
             presence_penalty: 0.4,
@@ -60,7 +60,7 @@ export default async function requestQuestions(
             const answer = await openai.createCompletion("text-curie-001", {
                 prompt: questions[i],
                 temperature: 0.2,
-                max_tokens: 80,
+                max_tokens: 100,
                 top_p: 1.0,
                 frequency_penalty: 0.0,
                 presence_penalty: 0.0,
