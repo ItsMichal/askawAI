@@ -132,6 +132,7 @@ export class SearchBar extends React.Component<SearchBarProps, SearchBarState> {
         classNames={this.classNames}
         autoresize={false}
         placeholderText={"Search for your class topic..."}
+        allowNew={true}
        />
       }else{
         return <>
