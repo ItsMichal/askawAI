@@ -52,7 +52,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header></Header>
-
+      
       <div className="grid grid-cols-6 h-full">
         <div className="lg:col-start-1 lg:col-span-6 col-start-1 col-end-7 mb-16 mx-2">
           <Card title={"Create a worksheet!"} description={"Simply enter your topic and click generate!"}>
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className="lg:col-start-1 lg:col-end-3 lg:mb-0 col-start-1 col-end-7 mb-4">
-          <DetailCard title={'What is AskawAI?'} description={<p>A new innovative resource for teachers to create assignments for students.<br></br><br></br> Teachers, Ask Awai!</p>} >
+          <DetailCard title={'What is AskawAI?'} description={<p>A new innovative resource for teachers to create assignments for students. Select a topic, generate questions, and print your worksheet that your students can use.<br></br><br></br> Teachers, Ask Awai!</p>} >
           </DetailCard>
         </div>
         <div className="lg:col-start-3 lg:col-end-5 col-start-1 col-end-7 mb-4">
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
           </DetailCard>
         </div>
         <div className="lg:col-end-7 lg:col-span-2 col-start-1 col-end-7 mb-4">
-          <DetailCard title={'T9 Hacks'} description={'We made this for the T9 Hacks hackathon! Using OpenAI, Next.js, TailwindCSS!'}>
+          <DetailCard title={'T9 Hacks'} description={'We made this for the T9 Hacks hackathon! Using OpenAI, React, Next.js, and TailwindCSS!'}>
           </DetailCard>
         </div>
       </div>

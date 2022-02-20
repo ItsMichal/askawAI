@@ -12,6 +12,7 @@
     "@heroicons/react": "^1.0.5",
     "docx-template": "^2.2.5",
     "docx-templates": "^4.9.1",
+    "html-pdf": "^3.0.1",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.1",
     "next": "12.1.0",
@@ -23,6 +24,7 @@
     "tailwindcss-hero-patterns": "^0.0.1"
   },
   "devDependencies": {
+    "@types/html-pdf": "^3.0.0",
     "@types/node": "17.0.18",
     "@types/react": "17.0.39",
     "@types/react-dom": "^17.0.11",

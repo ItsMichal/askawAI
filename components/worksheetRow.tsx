@@ -14,7 +14,7 @@ export const WorksheetRow = (props : WorksheetRowProps) => {
     return (<>
         <div className="">
             <div className="w-4/5 mx-auto my-10 font-bold text-xl">{props.id+1 +") "+props.question}</div>
-                <div className="border-2 rounded mx-auto w-4/5 h-64 border-black bg-purple-100"></div>
+                <div className="border-2 rounded mx-auto w-4/5 h-64 border-black"></div>
         </div>
         <div className="w-full bg-white my-10"></div>
         
