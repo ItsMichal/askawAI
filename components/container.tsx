@@ -82,6 +82,22 @@ export const Container= (props : ContainerProps) => {
                 <div className={"bg-grape hover:bg-white h-full text-white hover:text-purple-500 font-bold py-3.5 px-4 m-5 mr-5 rounded"}>
                     Export Worksheet! (HTML)
                 </div>
+
+                
+            </Link>
+
+            <Link passHref href={{
+                pathname:"/api/Worksheet.docx",
+                query: {"questions": rows!.problems.map((prob)=>{
+                    return prob.question;
+                }),
+                topic: rows!.topic}
+            }}>
+                <div className={"bg-grape hover:bg-white h-full text-white hover:text-purple-500 font-bold py-3.5 px-4 m-5 mr-5 rounded"}>
+                   DOCX File
+                </div>
+
+                
             </Link>
            {/* {props.children} */}
         </div>

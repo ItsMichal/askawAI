@@ -5,6 +5,10 @@ import path from 'path';
 
 const template = fs.readFileSync("public/template.docx");
 
+type TempRequest = {
+    topic: string,
+    questions: string[]
+}
 
 export default async function handler(
     req: NextApiRequest,
@@ -13,15 +17,11 @@ export default async function handler(
 
     const buffer = await createReport({
         template,
-        data: { 
-            topic: "Topic",
-            testtwo: "What?",
-            questions: [{question: "hiya"},{question: "hissya"} ]
-        },
-        cmdDelimiter: ["{", "}"]
+        data: req.query
     });
     fs.writeFileSync("public/temp.docx", buffer);
 
     res.setHeader('Content-Type', 'application/vnd.openxmlformats');
     res.send(fs.readFileSync("public/temp.docx"));
 }
+
