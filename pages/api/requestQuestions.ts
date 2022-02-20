@@ -16,7 +16,8 @@ export interface RequestQuestionRequest {
 }
 
 export interface RequestQuestionResponse  {
-    problems : Problem[]
+    problems : Problem[],
+    topic: string
 }
 export interface RequestQuestionError  {
     error : string
@@ -45,8 +46,10 @@ export default async function requestQuestions(
 
         questions = questions.filter(question => question !== "");
 
+        const regex = /\d+\. /g;
+
         questions.forEach((question, index) =>{
-            questions[index] = question.replace(`/\d+\./g`, "");
+            questions[index] = question.replace(regex, "");
         })
 
         const problems : Problem[] = [];
@@ -67,9 +70,7 @@ export default async function requestQuestions(
             problems.push({"question": questions[i], "answer": answer.data.choices[0].text});
         }
 
-    
-
-        res.send({problems});
+        res.send({problems:problems, topic:topic});
     }
 
     

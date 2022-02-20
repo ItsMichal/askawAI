@@ -95,7 +95,7 @@ export class SearchBar extends React.Component<SearchBarProps, SearchBarState> {
         return <button onClick={()=>{this.props.onGenerate(this.state.tags[0].name)}} className="flex-row bg-grape hover:bg-white h-full text-white hover:text-purple-500 font-bold py-3.5 px-4 m-5 mr-5 rounded ">Generate</button>
       }
       else{
-        return <p className="flex-row bg-white h-full text-purple-500 font-bold py-3.5 px-4 mb-3 mr-5 rounded ">Please enter a search term!</p>
+        return <p className="flex-row bg-white h-full text-purple-600 font-bold py-3.5 px-4 mb-3 mr-5 rounded ">Please enter a search term!</p>
       }
     
     }

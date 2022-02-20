@@ -36,7 +36,7 @@ const Home: NextPage = () => {
       </div>
     )}
     else if(user){
-      return <Container title={''} description={''} data={user}></Container>
+      return <Container title={''} description={''} data={user} id={0}></Container>
       // return <p>{user.problems}</p>
     }
     else{
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
       <Header></Header>
 
       <div className="grid grid-cols-6 h-full">
-        <div className="lg:col-start-1 lg:col-span-6 col-start-1 col-end-7 mb-16">
+        <div className="lg:col-start-1 lg:col-span-6 col-start-1 col-end-7 mb-16 mx-2">
           <Card title={"Create a worksheet!"} description={"Simply enter your topic and click generate!"}>
             <SearchBar title={"search bar"} onGenerate={generated}></SearchBar>
            
@@ -62,19 +62,16 @@ const Home: NextPage = () => {
           </Card>
         </div>
 
-        <div className="lg:col-start-1 lg:col-end-3 col-start-1 col-end-7">
+        <div className="lg:col-start-1 lg:col-end-3 lg:mb-0 col-start-1 col-end-7 mb-4">
           <DetailCard title={'What is AskawAI?'} description={<p>A new innovative resource for teachers to create assignments for students.<br></br><br></br> Teachers, Ask Awai!</p>} >
-            <p></p>
           </DetailCard>
         </div>
-        <div className="lg:col-start-3 lg:col-end-5 col-start-1 col-end-7">
+        <div className="lg:col-start-3 lg:col-end-5 col-start-1 col-end-7 mb-4">
           <DetailCard title={'How is this done?'} description={'Using AI technology, it can generate any question from ranging difficulty levels and topics suited for your needs.'}>
-            <p></p>
           </DetailCard>
         </div>
-        <div className="lg:col-end-7 lg:col-span-2 col-start-1 col-end-7">
-          <DetailCard title={''} description={''}>
-            <p></p>
+        <div className="lg:col-end-7 lg:col-span-2 col-start-1 col-end-7 mb-4">
+          <DetailCard title={'T9 Hacks'} description={'We made this for the T9 Hacks hackathon! Using OpenAI, Next.js, TailwindCSS!'}>
           </DetailCard>
         </div>
       </div>

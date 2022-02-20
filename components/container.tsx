@@ -1,10 +1,18 @@
 import { Component, useState } from "react";
 import { Problem, RequestQuestionResponse } from "../pages/api/requestQuestions";
 import Row from '../components/row';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import ReactDOMServer from "react-dom/server";
+import Link from 'next/link';
+
+const doc = new jsPDF();
+
 
 type ContainerProps = {
     title: string,
     description: string,
+    id: number,
     data: RequestQuestionResponse | undefined,
     // children: JSX.Element[] | JSX.Element
 }
@@ -16,7 +24,7 @@ export const Container= (props : ContainerProps) => {
         
         newRows.splice(questionId, 1);
 
-        setRows({problems:newRows});
+        setRows({problems:newRows, topic: rows!.topic});
     }
 
     function DataCheck() : JSX.Element {
@@ -53,7 +61,7 @@ export const Container= (props : ContainerProps) => {
                                 <tr className="text-2xl font-bold">
                                     <td className="px-5 pb-5 mx-auto">Questions and Answers</td>
                                     
-                                    <td className="px-5 pb-5 mx-auto">Remove?</td>
+                                    <td className="lg:display hidden px-5 pb-5 mx-auto">Remove?</td>
                                 </tr>
                                 
                             </thead>
@@ -64,10 +72,23 @@ export const Container= (props : ContainerProps) => {
                     </div>
                 </div>
             </div>
+            <Link passHref href={{
+                pathname:"/worksheet",
+                query: {"questions": rows!.problems.map((prob)=>{
+                    return prob.question;
+                }),
+                topic: rows!.topic}
+            }}>
+                <div className={"bg-grape hover:bg-white h-full text-white hover:text-purple-500 font-bold py-3.5 px-4 m-5 mr-5 rounded"}>
+                    Export Worksheet! (HTML)
+                </div>
+            </Link>
            {/* {props.children} */}
         </div>
            
     ) : <></>;
+
+    
 }
 
 export default Container
